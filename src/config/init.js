@@ -74,10 +74,10 @@ async function initSystemTables() {
     Comment.init(t_comment, { sequelize: mysqldb, modelName: 'm_comment' }).sync({ force });
     // 分类表     
     const { Category, t_category } = require('../models/Category');
-    Category.init(t_category, { sequelize: mysqldb, modelName: 'm_category' }).sync({ force }).then(()=> {
-           // 系统内置类型
+    Category.init(t_category, { sequelize: mysqldb, modelName: 'm_category' }).sync({ force }).then(() => {
+        // 系统内置类型
 
-           const docList = [
+        const docList = [
             { index: '000001', type: '1', name: 'react' },
             { index: '000002', type: '1', name: 'vue' },
             { index: '000003', type: '1', name: 'js' },
@@ -92,7 +92,7 @@ async function initSystemTables() {
             { index: '000012', type: '1', name: 'css3' },
             { index: '000013', type: '1', name: 'es6' }
         ];
-       
+
 
         function createCategory(list) {
             for (let i = 0; i < list.length; i++) {
